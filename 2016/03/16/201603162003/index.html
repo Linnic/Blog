@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo 操作日誌(一) | Smiles For Life</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="離架好網站拖了兩天，雖然內容早已打好，但要怎樣上傳，怎樣編寫內容還是個大問題。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo 操作日誌(一)">
+<meta property="og:url" content="http://linnic.github.io/Blog/2016/03/16/201603162003/index.html">
+<meta property="og:site_name" content="Smiles For Life">
+<meta property="og:description" content="離架好網站拖了兩天，雖然內容早已打好，但要怎樣上傳，怎樣編寫內容還是個大問題。">
+<meta property="og:updated_time" content="2016-04-15T17:02:26.480Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo 操作日誌(一)">
+<meta name="twitter:description" content="離架好網站拖了兩天，雖然內容早已打好，但要怎樣上傳，怎樣編寫內容還是個大問題。">
+  
+    <link rel="alternate" href="/atom.xml" title="Smiles For Life" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/Blog/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/Blog/" id="logo">Smiles For Life</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/Blog/" id="subtitle">Life is not an exact science, it is an art.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/Blog/">Home</a>
+        
+          <a class="main-nav-link" href="/Blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://linnic.github.io/Blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-201603162003" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Blog/2016/03/16/201603162003/" class="article-date">
+  <time datetime="2016-03-16T12:02:02.000Z" itemprop="datePublished">2016-03-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/Blog/categories/Server/">Server</a>►<a class="article-category-link" href="/Blog/categories/Server/Blog/">Blog</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hexo 操作日誌(一)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>離架好網站拖了兩天，雖然內容早已打好，但要怎樣上傳，怎樣編寫內容還是個大問題。<br><a id="more"></a></p>
+<h1 id="Problems："><a href="#Problems：" class="headerlink" title="Problems："></a>Problems：</h1><ol>
+<li>git commit 一直沒有東西傳上去</li>
+<li>Ubuntu Server 只有 tty 的介面，<em>無法切換中文語系</em>，故不能直接顯示中文及在 <em>.md</em> 中進行中文修改</li>
+<li>相對路徑會遇到”前面路徑被刪除”以及”後面路徑重複”，可能根據當前頁面而導致路徑出錯</li>
+<li>編寫語言</li>
+<li><code>&lt;!DOCTYPE html&gt;</code> 出現在文章中</li>
+<li>在 Hexo server 開啟中傳送文章，並重整網頁會有遺失檔案的可能性</li>
+</ol>
+<h1 id="Solutions："><a href="#Solutions：" class="headerlink" title="Solutions："></a>Solutions：</h1><ol>
+<li>沒有下 <code>hexo generate</code>，所以 hexo 沒有產生靜態的檔案至 public，導致在上傳時沒有發現任何修改。</li>
+<li>還是採用 PSFTP 將 <em>~/source/_posts/</em> 下的 <em>.md</em> 檔抓回，再用 Notepad or Sublime Text 進行修改，<br>然後再傳回。</li>
+<li><em>找到 generate 後，文章會被產生在 /public/2016/03/16/filename/ 下的 index.html 再重新設定相對路徑，但<strong>無解</strong>….</em>。<br>改採用 <code>&lt;!--more--&gt;</code>讓文章內容在首頁隱藏。</li>
+<li>可用 html or Markdown，文章中的段落會被自動改以 <code>&lt;p&gt;&lt;/p&gt;</code> 包起來，’1. ‘ 會被改成 <code>&lt;ol&gt;&lt;li&gt;&lt;/li&gt;&lt;/ol&gt;</code>。</li>
+<li>由於會自動加入框架，所以 html 的大框架可以不用打。</li>
+<li>避免此操作。</li>
+</ol>
+<h1 id="Reference："><a href="#Reference：" class="headerlink" title="Reference："></a>Reference：</h1><p><a href="http://www.w3schools.com/html/html_intro.asp" target="_blank" rel="external">HTML Introduction - w3schools.com</a></p>
+<p><a href="http://markdown.tw/#backslash" target="_blank" rel="external">Markdown文件</a></p>
+<p><a href="http://wuzhaohui026.github.io/2016/01/14/hexo%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%92%8C%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" target="_blank" rel="external">hexo命令和一些使用方法</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://linnic.github.io/Blog/Blog/2016/03/16/201603162003/" data-id="cin1z9xp10007y6jx3wygx7yl" class="article-share-link">Share</a>
+      
+        <a href="http://linnic.github.io/Blog/Blog/2016/03/16/201603162003/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/Markdown/">Markdown</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/Blog/2016/03/18/201603181928/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Ubuntu Server 砍掉重練
+        
+      </div>
+    </a>
+  
+  
+    <a href="/Blog/2016/03/16/201603161737/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hexo Blog 架設過程</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/Coding/">Coding</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/Coding/Style/">Style</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/Course/">Course</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/Course/Network/">Network</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/Server/">Server</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/Server/Blog/">Blog</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Android-studio/">Android studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Genymotion/">Genymotion</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Gnuplot/">Gnuplot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/IPerf/">IPerf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/JDK/">JDK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Mininet/">Mininet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/NVM/">NVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/React-Native/">React-Native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/SSH/">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/VirtualBox/">VirtualBox</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/Blog/tags/Android-studio/" style="font-size: 10px;">Android studio</a> <a href="/Blog/tags/Genymotion/" style="font-size: 10px;">Genymotion</a> <a href="/Blog/tags/Git/" style="font-size: 10px;">Git</a> <a href="/Blog/tags/Github/" style="font-size: 13.33px;">Github</a> <a href="/Blog/tags/Gnuplot/" style="font-size: 13.33px;">Gnuplot</a> <a href="/Blog/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/Blog/tags/Hexo/" style="font-size: 16.67px;">Hexo</a> <a href="/Blog/tags/IPerf/" style="font-size: 13.33px;">IPerf</a> <a href="/Blog/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/Blog/tags/Linux/" style="font-size: 13.33px;">Linux</a> <a href="/Blog/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/Blog/tags/Mininet/" style="font-size: 16.67px;">Mininet</a> <a href="/Blog/tags/NVM/" style="font-size: 10px;">NVM</a> <a href="/Blog/tags/Python/" style="font-size: 10px;">Python</a> <a href="/Blog/tags/React-Native/" style="font-size: 10px;">React-Native</a> <a href="/Blog/tags/SSH/" style="font-size: 13.33px;">SSH</a> <a href="/Blog/tags/Ubuntu/" style="font-size: 20px;">Ubuntu</a> <a href="/Blog/tags/VirtualBox/" style="font-size: 10px;">VirtualBox</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2016/03/">三月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/Blog/2016/04/16/201604160114/">React-native 起手式 - 環境建置(Windows)</a>
+          </li>
+        
+          <li>
+            <a href="/Blog/2016/03/27/201603272234/">網路拓樸模擬(四) - 走出 Mininet</a>
+          </li>
+        
+          <li>
+            <a href="/Blog/2016/03/25/201603251901/">網路拓樸模擬(三) - Bridge &amp; Switch &amp; VLAN</a>
+          </li>
+        
+          <li>
+            <a href="/Blog/2016/03/21/201603211630/">網路拓樸模擬(二) - Router &amp; Bridge</a>
+          </li>
+        
+          <li>
+            <a href="/Blog/2016/03/20/201603202123/">網路拓樸模擬(一) - 基本操作</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 YuRen Lin<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/Blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/Blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'mocoera34';
+  
+  var disqus_url = 'http://linnic.github.io/Blog/Blog/2016/03/16/201603162003/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/Blog/fancybox/jquery.fancybox.css">
+  <script src="/Blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/Blog/js/script.js"></script>
+
+  </div>
+</body>
+</html>

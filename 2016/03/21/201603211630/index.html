@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>網路拓樸模擬(二) - Router &amp; Bridge | Smiles For Life</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="啊啊啊~ 昨天精神衰弱沒睡覺，還上了整個早上的課，感覺快掛了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="網路拓樸模擬(二) - Router & Bridge">
+<meta property="og:url" content="http://linnic.github.io/Blog/2016/03/21/201603211630/index.html">
+<meta property="og:site_name" content="Smiles For Life">
+<meta property="og:description" content="啊啊啊~ 昨天精神衰弱沒睡覺，還上了整個早上的課，感覺快掛了。">
+<meta property="og:image" content="http://linnic.github.io/Blog/./Router%201.jpg">
+<meta property="og:image" content="http://linnic.github.io/Blog/./TCP_UDP_flow.jpeg">
+<meta property="og:image" content="http://linnic.github.io/Blog/./Router%202.jpg">
+<meta property="og:image" content="http://linnic.github.io/Blog/./Bridge%201.jpg">
+<meta property="og:image" content="http://linnic.github.io/Blog/./test4.png">
+<meta property="og:updated_time" content="2016-04-15T17:09:18.876Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="網路拓樸模擬(二) - Router & Bridge">
+<meta name="twitter:description" content="啊啊啊~ 昨天精神衰弱沒睡覺，還上了整個早上的課，感覺快掛了。">
+<meta name="twitter:image" content="http://linnic.github.io/Blog/./Router%201.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Smiles For Life" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/Blog/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/Blog/" id="logo">Smiles For Life</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/Blog/" id="subtitle">Life is not an exact science, it is an art.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/Blog/">Home</a>
+        
+          <a class="main-nav-link" href="/Blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://linnic.github.io/Blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-201603211630" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Blog/2016/03/21/201603211630/" class="article-date">
+  <time datetime="2016-03-21T08:30:27.000Z" itemprop="datePublished">2016-03-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/Blog/categories/Course/">Course</a>►<a class="article-category-link" href="/Blog/categories/Course/Network/">Network</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      網路拓樸模擬(二) - Router &amp; Bridge
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>啊啊啊~ 昨天精神衰弱沒睡覺，還上了整個早上的課，感覺快掛了。<a id="more"></a><br>午睡後依舊沒睡好~~~ 哀，繼續趕工啦。</p>
+<p>這堂課有 2 個路由器實驗以及 1 個橋接器實驗：</p>
+<h3 id="1-Router-1"><a href="#1-Router-1" class="headerlink" title="1. Router(1)"></a>1. Router(1)</h3><p>  a. 網路拓樸設定<br>  b. 實驗操作</p>
+<h3 id="2-Router-2"><a href="#2-Router-2" class="headerlink" title="2. Router(2)"></a>2. Router(2)</h3><p>  a. 網路拓樸設定<br>  b. 實驗操作</p>
+<h3 id="3-Bridge"><a href="#3-Bridge" class="headerlink" title="3. Bridge"></a>3. Bridge</h3><p>  a. 網路拓樸設定<br>  b. 實驗操作</p>
+<h1 id="Router-1"><a href="#Router-1" class="headerlink" title="Router(1)"></a>Router(1)</h1><h2 id="網路拓樸設定"><a href="#網路拓樸設定" class="headerlink" title="網路拓樸設定"></a>網路拓樸設定</h2><p><img src="./Router%201.jpg" alt="Router 1"></p>
+<p>模擬 3 個 Hosts 中間經過一個 Router。<br>參考範例：<a href="https://github.com/Linnic/Course_SDN_Network/blob/master/SDN_Hub/test_2.py" target="_blank" rel="external">example</a></p>
+<h2 id="實驗操作"><a href="#實驗操作" class="headerlink" title="實驗操作"></a>實驗操作</h2><p><em>本次實驗是要印證 TCP 跟 UDP 的封包同時傳送時，通道的變化</em></p>
+<ol>
+<li><p>進入 terminal</p>
+<pre><code>user:$ chmod +x test2.py
+user:$ sudo ./test2.py
+
+# 檢查網路是否暢通
+mininet&gt; host_1 ping host_2 -c 3
+mininet&gt; host_1 ping host_3 -c 3
+mininet&gt; host_2 ping host_3 -c 3
+
+mininet&gt; xterm host_1 host_2 host_3 host_3
+
+# host_3 做 Server 監聽封包
+host_3:$ iperf3 -s -i 1 -p 5577
+host_3:$ iperf3 -s -i 1 -p 5588
+
+# host_1 送 TCP 封包
+host_1:$ iperf3 -c 192.168.30.2 -p 5577 -t 20
+
+# host_2 送 UDP 封包
+host_2:$ iperf3 -c 192.168.30.2 -p 5588 -t 10 -b 100M -l 1500
+
+-l: 是指 Package Size(扣掉 Mac Header 後的大小)
+</code></pre></li>
+<li><p>資料處理…..可參考先前的<a href=""></a>文章，只不過由於 UDP 並沒有跟 TCP 同時送出，故需要手動處理一下。</p>
+</li>
+<li><p>繪製圖片，如果有需要知道程式碼在幹嘛，上方連結可以點開看看。</p>
+<pre><code>gnuplot&gt; set title &quot;TCP/UDP flow&quot;
+gnuplot&gt; set xlabel &quot;Times(sec)&quot;; set ylabel &quot;Bandwidth(Mbits)&quot;
+gnuplot&gt; set xrange [0:20]; set xtics 0, 1, 20
+gnuplot&gt; set yrange [0:100]; set ytics 0, 10, 100
+gnuplot&gt; set key at 12,50
+gnuplot&gt; set output &quot;TCP/UDP_flow.jpeg&quot;
+gnuplot&gt; plot &quot;Flow&quot; using 1:2 title &quot;TCP flow&quot; with linespoints, &quot;Flow&quot; using 1:3 title &quot;UDP flow&quot; with linespoints
+gnuplot&gt; replot
+
+# using X:Y 是指取哪兩行做資料的 X 座標跟 Y 座標
+</code></pre></li>
+</ol>
+<p><img src="./TCP_UDP_flow.jpeg" alt="TCP & UDP flow"></p>
+<p><strong>由於 UDP 沒有 Flow Control，所以 TCP 的頻寬完全被占走</strong></p>
+<h1 id="Router-2"><a href="#Router-2" class="headerlink" title="Router(2)"></a>Router(2)</h1><h2 id="網路拓樸設定-1"><a href="#網路拓樸設定-1" class="headerlink" title="網路拓樸設定"></a>網路拓樸設定</h2><p><img src="./Router%202.jpg" alt="Router 2"></p>
+<p>模擬 2 個 Hosts 中間經過 3 個 Routers。<br>參考範例：<a href="https://github.com/Linnic/Course_SDN_Network/blob/master/SDN_Hub/test_3.py" target="_blank" rel="external">example</a></p>
+<h2 id="實驗操作-1"><a href="#實驗操作-1" class="headerlink" title="實驗操作"></a>實驗操作</h2><ol>
+<li><p>進入 terminal</p>
+<pre><code>user:$ chmod +x test3.py
+user:$ sudo ./test3.py
+
+# 檢查網路是否暢通
+mininet&gt; host_1 ping router_1 -c 3
+mininet&gt; host_1 ping router_2 -c 3
+mininet&gt; host_1 ping router_3 -c 3
+mininet&gt; host_1 ping host_2 -c 3
+</code></pre></li>
+</ol>
+<h1 id="Bridge"><a href="#Bridge" class="headerlink" title="Bridge"></a>Bridge</h1><h2 id="網路拓樸設定-2"><a href="#網路拓樸設定-2" class="headerlink" title="網路拓樸設定"></a>網路拓樸設定</h2><p><img src="./Bridge%201.jpg" alt="Bridge 1"></p>
+<p>模擬 3 個 Hosts 中間經過一個 Router。<br>參考範例：<a href="https://github.com/Linnic/Course_SDN_Network/blob/master/SDN_Hub/test_4.py" target="_blank" rel="external">example</a></p>
+<h2 id="實驗操作-2"><a href="#實驗操作-2" class="headerlink" title="實驗操作"></a>實驗操作</h2><ol>
+<li><p>需要安裝 Bridge ，指令為 <code>sudo apt-get install bridge-utils</code></p>
+</li>
+<li><p>進入 terminal</p>
+<pre><code>user:$ chmod +x test4.py
+user:$ sudo ./test4.py
+
+# 檢查網路是否暢通
+mininet&gt; host_1 ping host_2 -c 3
+mininet&gt; host_1 ping host_3 -c 3
+mininet&gt; host_2 ping host_3 -c 3
+</code></pre></li>
+<li><p>封包分析：因為 Bridge 跟 Hub 差別在多了學習功能<br>目的：<strong>印正 Bridge 的廣播學習功能</strong></p>
+<pre><code># Host 2 監聽封包
+host_2:$ tcpdump -i host_2-eth0 -U
+
+# Host 3 監聽封包並寫進 Log
+host_3:$ tcpdump -i host_3-eth0 -U -w mylog
+
+host_1:$ ping 192.168.10.3
+
+host_3:$ wireshark mylog
+</code></pre></li>
+</ol>
+<p><img src="./test4.png" alt="Bridge 1 實驗"></p>
+<h1 id="Reference："><a href="#Reference：" class="headerlink" title="Reference："></a>Reference：</h1><p><a href="http://csie.nqu.edu.tw/smallko/sdn/sdn.htm" target="_blank" rel="external">Software Defined Network (SDN)—Mininet Learning Guide - 柯老師</a></p>
+<p><a href="http://note.tc.edu.tw/416.html" target="_blank" rel="external">gnuplot 繪製圖形教學 - 精讚部落格</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://linnic.github.io/Blog/Blog/2016/03/21/201603211630/" data-id="cin1z9xps000jy6jxeimozfz4" class="article-share-link">Share</a>
+      
+        <a href="http://linnic.github.io/Blog/Blog/2016/03/21/201603211630/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/Gnuplot/">Gnuplot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/IPerf/">IPerf</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/Mininet/">Mininet</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/Blog/2016/03/25/201603251901/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          網路拓樸模擬(三) - Bridge &amp; Switch &amp; VLAN
+        
+      </div>
+    </a>
+  
+  
+    <a href="/Blog/2016/03/20/201603202123/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">網路拓樸模擬(一) - 基本操作</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/Coding/">Coding</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/Coding/Style/">Style</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/Course/">Course</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/Course/Network/">Network</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/Server/">Server</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/Server/Blog/">Blog</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Android-studio/">Android studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Genymotion/">Genymotion</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Gnuplot/">Gnuplot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/IPerf/">IPerf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/JDK/">JDK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Mininet/">Mininet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/NVM/">NVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/React-Native/">React-Native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/SSH/">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/VirtualBox/">VirtualBox</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/Blog/tags/Android-studio/" style="font-size: 10px;">Android studio</a> <a href="/Blog/tags/Genymotion/" style="font-size: 10px;">Genymotion</a> <a href="/Blog/tags/Git/" style="font-size: 10px;">Git</a> <a href="/Blog/tags/Github/" style="font-size: 13.33px;">Github</a> <a href="/Blog/tags/Gnuplot/" style="font-size: 13.33px;">Gnuplot</a> <a href="/Blog/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/Blog/tags/Hexo/" style="font-size: 16.67px;">Hexo</a> <a href="/Blog/tags/IPerf/" style="font-size: 13.33px;">IPerf</a> <a href="/Blog/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/Blog/tags/Linux/" style="font-size: 13.33px;">Linux</a> <a href="/Blog/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/Blog/tags/Mininet/" style="font-size: 16.67px;">Mininet</a> <a href="/Blog/tags/NVM/" style="font-size: 10px;">NVM</a> <a href="/Blog/tags/Python/" style="font-size: 10px;">Python</a> <a href="/Blog/tags/React-Native/" style="font-size: 10px;">React-Native</a> <a href="/Blog/tags/SSH/" style="font-size: 13.33px;">SSH</a> <a href="/Blog/tags/Ubuntu/" style="font-size: 20px;">Ubuntu</a> <a href="/Blog/tags/VirtualBox/" style="font-size: 10px;">VirtualBox</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2016/03/">三月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/Blog/2016/04/16/201604160114/">React-native 起手式 - 環境建置(Windows)</a>
+          </li>
+        
+          <li>
+            <a href="/Blog/2016/03/27/201603272234/">網路拓樸模擬(四) - 走出 Mininet</a>
+          </li>
+        
+          <li>
+            <a href="/Blog/2016/03/25/201603251901/">網路拓樸模擬(三) - Bridge &amp; Switch &amp; VLAN</a>
+          </li>
+        
+          <li>
+            <a href="/Blog/2016/03/21/201603211630/">網路拓樸模擬(二) - Router &amp; Bridge</a>
+          </li>
+        
+          <li>
+            <a href="/Blog/2016/03/20/201603202123/">網路拓樸模擬(一) - 基本操作</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 YuRen Lin<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/Blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/Blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'mocoera34';
+  
+  var disqus_url = 'http://linnic.github.io/Blog/Blog/2016/03/21/201603211630/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/Blog/fancybox/jquery.fancybox.css">
+  <script src="/Blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/Blog/js/script.js"></script>
+
+  </div>
+</body>
+</html>

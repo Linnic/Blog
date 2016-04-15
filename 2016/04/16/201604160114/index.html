@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>React-native 起手式 - 環境建置(Windows) | Smiles For Life</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="想想，也該來學習 React-native 了，安裝的過程多災多難~~~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React-native 起手式 - 環境建置(Windows)">
+<meta property="og:url" content="http://linnic.github.io/Blog/2016/04/16/201604160114/index.html">
+<meta property="og:site_name" content="Smiles For Life">
+<meta property="og:description" content="想想，也該來學習 React-native 了，安裝的過程多災多難~~~">
+<meta property="og:updated_time" content="2016-04-15T17:43:27.748Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React-native 起手式 - 環境建置(Windows)">
+<meta name="twitter:description" content="想想，也該來學習 React-native 了，安裝的過程多災多難~~~">
+  
+    <link rel="alternate" href="/atom.xml" title="Smiles For Life" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/Blog/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/Blog/" id="logo">Smiles For Life</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/Blog/" id="subtitle">Life is not an exact science, it is an art.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/Blog/">Home</a>
+        
+          <a class="main-nav-link" href="/Blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://linnic.github.io/Blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-201604160114" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/Blog/2016/04/16/201604160114/" class="article-date">
+  <time datetime="2016-04-15T17:14:10.000Z" itemprop="datePublished">2016-04-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/Blog/categories/Server/">Server</a>►<a class="article-category-link" href="/Blog/categories/Server/Blog/">Blog</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      React-native 起手式 - 環境建置(Windows)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>想想，也該來學習 React-native 了，安裝的過程多災多難~~~<a id="more"></a></p>
+<p>本來在 Windows 上安裝不順利，cmd 沒有權限的問題，忘記可以按右鍵以系統管理員來開啟。</p>
+<p>然後跟朋友抱怨了一下，就決定裝在 Virtualbox 下的 Ubuntu Server，好巧不巧，React-native 裝完後，在裝 Android studio 時，硬碟空間竟然不夠了~~~~一開始沒想那麼多，就想直接新增虛擬硬碟來擴充，然後發現最尷尬的……</p>
+<p>GOD~~  竟然跟另外一台 Server 共用虛擬打硬碟…….<br>腦中閃過~ “又要重灌了…..”</p>
+<p>好吧，那就來灌，花了一天，把 nvm、node、Hexo、SSH、Git、Reacr-native、Android studio、VirtualBox、Genymotion、JDK-8，完整裝過一遍，當然，中間陸續有些問題，不過最後一次裝起來滿順手的。</p>
+<p>一開始，<code>React-native start</code> 後就卡在這</p>
+<p><strong> [21:49:17] <end>   Building Dependency Graph (2909ms) </end></strong></p>
+<p>真的不知道該怎辦，後來發現發現應該是模擬器沒設定，然後把 Android 後面的套件都裝一裝。</p>
+<p>本以為裝完人生從此順遂，可以開始 React-native 的道路時，才發現…… Genymotion 根本開不起模擬器 VirtualBox 也不行，我操…….</p>
+<h2 id="1-Genymotion-的問題"><a href="#1-Genymotion-的問題" class="headerlink" title="1. Genymotion 的問題:"></a>1. Genymotion 的問題:</h2><p>a. <strong> DHCP &amp; IP not set </strong> &gt;&gt; 試著去修改 VirtualBox，最後都會被 Genymotion 改回……<br>b. <strong> 還有 CPU 數量不夠 </strong> &gt;&gt; 調成 1 CPU 即可</p>
+<h2 id="2-VirtualBox-的問題"><a href="#2-VirtualBox-的問題" class="headerlink" title="2. VirtualBox 的問題:"></a>2. VirtualBox 的問題:</h2><p>a. <strong> this kernel requires an x86-64 CPU, but only detects an i686 CPU, unable to boot </strong> &gt;&gt; 需要 VT-X/AMD-V 功能開啟，偏偏我的電腦 BIOS 沒這功能….. VirtualBox 設定開啟也回天乏術 ……</p>
+<p><em>各種內心小劇場想放棄啊 ~~~~ 擔心我畢業可能沒法面試上想要的公司……啊 ~ 啊 ~ 啊 ~ 啊 ~~</em></p>
+<p>然後又抱怨了一下之後 …… 跑去睡覺 ~ 晚上睡醒沒吃飯，又恰逢下雨，就不出門，垃圾也不倒了，打開電腦試試看之前在 Windows 裝不起來的 React-native，想到用前面提到的方法來安裝，總算成功了 ~ 可喜可賀 ~</p>
+<p>接著又花了好一段時間把 Android studio、JDK-8、Genymotion 都升級、重裝、環境變數設定，好不容易搞好，執行到 <code>React-native start</code> 又卡住了……。</p>
+<p>爬了一下文，自己也整理了一下順序：</p>
+<h1 id="開啟步驟"><a href="#開啟步驟" class="headerlink" title="開啟步驟:"></a>開啟步驟:</h1><ol>
+<li><p>將專案匯入 Android studio</p>
+</li>
+<li><p>在 Genymotion 設定模擬器</p>
+</li>
+<li><p>啟動 React-Native Server</p>
+<pre><code>react-native start
+</code></pre></li>
+<li><p>打開瀏覽器瀏覽，<a href="http://localhost:8081/index.android.bundle?platform=android" target="_blank" rel="external">http://localhost:8081/index.android.bundle?platform=android</a><br><strong>看到 JS 文件代表成功，而 Building Dependency Graph 後沒下文的東西都會跑出來 ~ 灑花 ~~</strong></p>
+</li>
+<li><p>用 Genymotion 啟動模擬器</p>
+</li>
+<li><p>打開另一個 cmd ，安裝 Debug</p>
+<pre><code>cd AwesomeProject\android
+gradlew.bat installDebug
+</code></pre></li>
+<li><p>後續等兩個 cmd 都跑到一定段落(Server 的 cmd 會一直開著不管，另一個跑完就沒事了……)</p>
+</li>
+<li><p>手動打開 App …… 感謝老天從來沒有拋棄我 ~~ 泣 ~~</p>
+</li>
+</ol>
+<p>好了，文章記錄到這 ~ 開始來救援之前的文章 ……</p>
+<h1 id="Reference："><a href="#Reference：" class="headerlink" title="Reference："></a>Reference：</h1><p><a href="https://www.aswifter.com/2015/11/17/set-up-react-native-windows/" target="_blank" rel="external">Windows下搭建React Native开发环境</a></p>
+<p><a href="http://bbs.reactnative.cn/topic/10/%E5%9C%A8windows%E4%B8%8B%E6%90%AD%E5%BB%BAreact-native-android%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83" target="_blank" rel="external">在Windows下搭建React Native Android开发环境</a></p>
+<p><a href="https://developer.android.com/sdk/installing/index.html?pkg=tools" target="_blank" rel="external">Android studio</a></p>
+<p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">JDK 8</a></p>
+<p><a href="http://www.cnblogs.com/a2211009/p/4265225.html" target="_blank" rel="external">Ubuntu 安装 JDK 7 / JDK8 的两种方式</a></p>
+<p><a href="https://docs.genymotion.com/Content/01_Get_Started/Installation.htm" target="_blank" rel="external">Genymotion</a></p>
+<p><a href="https://www.virtualbox.org/wiki/Linux_Downloads" target="_blank" rel="external">VirtualBox</a></p>
+<p><a href="https://help.ubuntu.com/community/VirtualBox/Installation" target="_blank" rel="external">VirtualBox/Installation</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://linnic.github.io/Blog/Blog/2016/04/16/201604160114/" data-id="cin1z9xpz000py6jxv0s9v8th" class="article-share-link">Share</a>
+      
+        <a href="http://linnic.github.io/Blog/Blog/2016/04/16/201604160114/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/Android-studio/">Android studio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/Genymotion/">Genymotion</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/JDK/">JDK</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/React-Native/">React-Native</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/VirtualBox/">VirtualBox</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/Blog/2016/03/27/201603272234/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">網路拓樸模擬(四) - 走出 Mininet</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/Coding/">Coding</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/Coding/Style/">Style</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/Course/">Course</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/Course/Network/">Network</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/Server/">Server</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/Blog/categories/Server/Blog/">Blog</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Android-studio/">Android studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Genymotion/">Genymotion</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Gnuplot/">Gnuplot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/IPerf/">IPerf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/JDK/">JDK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Mininet/">Mininet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/NVM/">NVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/React-Native/">React-Native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/SSH/">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/VirtualBox/">VirtualBox</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/Blog/tags/Android-studio/" style="font-size: 10px;">Android studio</a> <a href="/Blog/tags/Genymotion/" style="font-size: 10px;">Genymotion</a> <a href="/Blog/tags/Git/" style="font-size: 10px;">Git</a> <a href="/Blog/tags/Github/" style="font-size: 13.33px;">Github</a> <a href="/Blog/tags/Gnuplot/" style="font-size: 13.33px;">Gnuplot</a> <a href="/Blog/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/Blog/tags/Hexo/" style="font-size: 16.67px;">Hexo</a> <a href="/Blog/tags/IPerf/" style="font-size: 13.33px;">IPerf</a> <a href="/Blog/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/Blog/tags/Linux/" style="font-size: 13.33px;">Linux</a> <a href="/Blog/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/Blog/tags/Mininet/" style="font-size: 16.67px;">Mininet</a> <a href="/Blog/tags/NVM/" style="font-size: 10px;">NVM</a> <a href="/Blog/tags/Python/" style="font-size: 10px;">Python</a> <a href="/Blog/tags/React-Native/" style="font-size: 10px;">React-Native</a> <a href="/Blog/tags/SSH/" style="font-size: 13.33px;">SSH</a> <a href="/Blog/tags/Ubuntu/" style="font-size: 20px;">Ubuntu</a> <a href="/Blog/tags/VirtualBox/" style="font-size: 10px;">VirtualBox</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2016/03/">三月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/Blog/2016/04/16/201604160114/">React-native 起手式 - 環境建置(Windows)</a>
+          </li>
+        
+          <li>
+            <a href="/Blog/2016/03/27/201603272234/">網路拓樸模擬(四) - 走出 Mininet</a>
+          </li>
+        
+          <li>
+            <a href="/Blog/2016/03/25/201603251901/">網路拓樸模擬(三) - Bridge &amp; Switch &amp; VLAN</a>
+          </li>
+        
+          <li>
+            <a href="/Blog/2016/03/21/201603211630/">網路拓樸模擬(二) - Router &amp; Bridge</a>
+          </li>
+        
+          <li>
+            <a href="/Blog/2016/03/20/201603202123/">網路拓樸模擬(一) - 基本操作</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 YuRen Lin<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/Blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/Blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'mocoera34';
+  
+  var disqus_url = 'http://linnic.github.io/Blog/Blog/2016/04/16/201604160114/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/Blog/fancybox/jquery.fancybox.css">
+  <script src="/Blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/Blog/js/script.js"></script>
+
+  </div>
+</body>
+</html>

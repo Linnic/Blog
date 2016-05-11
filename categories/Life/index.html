@@ -3,18 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Github SSH key for Ubuntu_Server on VirtualBox | Smiles For Life</title>
+  <title>Category: Life | Smiles For Life</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一直沒搞懂 SSH key 要幹嘛，邊做邊發現有些問題，並回想之前在 Windows 上操作的情況，">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Github SSH key for Ubuntu_Server on VirtualBox">
-<meta property="og:url" content="http://linnic.github.io/Blog/2016/03/16/201603161731/index.html">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Smiles For Life">
+<meta property="og:url" content="http://linnic.github.io/Blog/categories/Life/index.html">
 <meta property="og:site_name" content="Smiles For Life">
-<meta property="og:description" content="一直沒搞懂 SSH key 要幹嘛，邊做邊發現有些問題，並回想之前在 Windows 上操作的情況，">
-<meta property="og:updated_time" content="2016-04-15T17:00:40.740Z">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Github SSH key for Ubuntu_Server on VirtualBox">
-<meta name="twitter:description" content="一直沒搞懂 SSH key 要幹嘛，邊做邊發現有些問題，並回想之前在 Windows 上操作的情況，">
+<meta name="twitter:title" content="Smiles For Life">
+<meta name="twitter:description">
   
     <link rel="alternate" href="/atom.xml" title="Smiles For Life" type="application/atom+xml">
   
@@ -67,86 +66,40 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-201603161731" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/Blog/2016/03/16/201603161731/" class="article-date">
-  <time datetime="2016-03-16T09:30:07.000Z" itemprop="datePublished">2016-03-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/Blog/categories/Server/">Server</a>►<a class="article-category-link" href="/Blog/categories/Server/Blog/">Blog</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      Github SSH key for Ubuntu_Server on VirtualBox
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/Blog/archives/2016" class="archive-year">2016</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/Blog/2016/05/11/201605112109/" class="archive-article-date">
+  <time datetime="2016-05-11T13:09:41.000Z" itemprop="datePublished">5月 11</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/Blog/2016/05/11/201605112109/">日本自由行觀察</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一直沒搞懂 SSH key 要幹嘛，邊做邊發現有些問題，並回想之前在 Windows 上操作的情況，<a id="more"></a><br>然後才弄懂 Github 上 SSH keys 是在管理不同裝置的連線認證，新增的部分包含了’title’、’key’，<br>本以為 key 的部分只要貼中間亂碼的部分，後來才發現要<strong>完整的內容(包含其他參數)</strong>才行。</p>
-<h1 id="Problems："><a href="#Problems：" class="headerlink" title="Problems："></a>Problems：</h1><ol>
-<li>Ubuntu_Server 下，SSH key 無法直接被複製到 Windows 上</li>
-<li>PuTTY 無法直接抓檔(有其他解法不過沒用……)</li>
-<li>PSFTP 無法進入 <em>~/.ssh</em> 抓 SSH key</li>
-</ol>
-<h1 id="Solutions："><a href="#Solutions：" class="headerlink" title="Solutions："></a>Solutions：</h1><p>在 Ubuntu_Server 上先將存有 SSH key 的檔案複製到其他資料夾，<br>在透過 SFTP 將檔案抓回本地端。<br>然後將得到的 key 放進 GitHub 上新增的 SSH key 內，就完成了。</p>
-<h1 id="Reference："><a href="#Reference：" class="headerlink" title="Reference："></a>Reference：</h1><p><a href="https://gist.github.com/yisibl/8019693" target="_blank" rel="external">如何创建公钥 - yisibl</a></p>
-<p><a href="http://www.myexception.cn/linux-unix/1770431.html" target="_blank" rel="external">将VirtualBox内的CentOS中的Vim代码，复制到Windows下的Word/WPS中。 请问怎么操作</a></p>
-<p><a href="http://fcamel-life.blogspot.tw/2011/02/vim-terminal-windows-clipboard.html" target="_blank" rel="external">讓 vim 的複製貼上和其它 terminal 以及 Windows 共用 clipboard - fcamel 技術隨手記</a></p>
-<p><a href="http://bcc16.ncu.edu.tw/6/putty/psftp.html" target="_blank" rel="external">PSFTP</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://linnic.github.io/Blog/Blog/2016/03/16/201603161731/" data-id="cio2z1z2200048yjxedsch67l" class="article-share-link">Share</a>
-      
-        <a href="http://linnic.github.io/Blog/Blog/2016/03/16/201603161731/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/SSH/">SSH</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/Ubuntu/">Ubuntu</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/Blog/2016/03/16/201603161737/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Hexo Blog 架設過程
-        
-      </div>
-    </a>
-  
-  
-    <a href="/Blog/2016/03/16/201603161721/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Git Setting</div>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
 
-
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
 </section>
         
           <aside id="sidebar">
@@ -245,13 +198,11 @@
 <script>
   var disqus_shortname = 'mocoera34';
   
-  var disqus_url = 'http://linnic.github.io/Blog/Blog/2016/03/16/201603161731/';
-  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
